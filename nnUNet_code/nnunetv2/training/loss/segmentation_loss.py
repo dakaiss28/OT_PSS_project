@@ -63,28 +63,3 @@ class SegmentationLoss(nn.Module):
         return total_loss / B 
      
 
-# if __name__ == "__main__":
-#     # Parameters
-#     B, K, D, H, W = 1, 4, 16, 16, 16   # batch=2, 4 classes, 3D volume 16x16x16
-    
-#     # Fake logits (before softmax)
-#     logits = torch.randn(B, K, D, H, W, requires_grad=True)
-    
-#     # Fake labels (integer mask, one organ labeled per sample)
-#     y = torch.randint(0, 2, (B, D, H, W))
-    
-#     # Loss function
-#     criterion = SegmentationLoss(bg_index=0)
-    
-#     # Forward pass
-#     loss = criterion(logits, y)
-    
-#     print("Loss:", loss.item())
-    
-#     # Backward to check gradient flow
-#     loss.backward()
-#     print("Backward pass successful!")
-
-
-
-
